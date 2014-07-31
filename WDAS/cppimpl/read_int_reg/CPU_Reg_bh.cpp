@@ -1,0 +1,1 @@
+return (ebx&0xFF00)>>8;

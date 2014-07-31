@@ -1,0 +1,1 @@
+return ebp&0xFFFF;

@@ -1,0 +1,1 @@
+ebx = (ebx&0xFFFFFFFFFFFFFF00) | (data&0xFF);

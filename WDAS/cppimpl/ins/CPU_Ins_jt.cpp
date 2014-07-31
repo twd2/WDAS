@@ -1,0 +1,1 @@
+if (popi()&1) eip = getIntValue(ii.pi[0]);

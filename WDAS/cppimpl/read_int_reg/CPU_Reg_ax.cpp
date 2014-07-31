@@ -1,0 +1,1 @@
+return eax&0xFFFF;

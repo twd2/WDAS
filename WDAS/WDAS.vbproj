@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C35B3A2-6B79-49FE-B98B-2C0BF1023329}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <StartupObject>WDAS.EntryPoint</StartupObject>
+    <RootNamespace>WDAS</RootNamespace>
+    <AssemblyName>WDAS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Console</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>WDAS.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>WDAS.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\</OutputPath>
+    <DocumentationFile>WDAS.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>WDAS.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>WDAS.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'x64|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\x64\</OutputPath>
+    <DocumentationFile>WDAS.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assembler.vb" />
+    <Compile Include="AssemblerException.vb" />
+    <Compile Include="BinaryCodeHelper.vb" />
+    <Compile Include="Class1.vb" />
+    <Compile Include="Clock.vb" />
+    <Compile Include="CppHelper.vb" />
+    <Compile Include="CPU.vb" />
+    <Compile Include="CPUException.vb" />
+    <Compile Include="CPU_Instructions.vb" />
+    <Compile Include="CPU_Registers.vb" />
+    <Compile Include="InstructionInfo.vb" />
+    <Compile Include="InterruptInfo.vb" />
+    <Compile Include="LineInfo.vb" />
+    <Compile Include="Machine.vb" />
+    <Compile Include="Memory.vb" />
+    <Compile Include="EntryPoint.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ParameterInfo.vb" />
+    <Compile Include="StartupArgs.vb" />
+    <Compile Include="vb.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cppimpl\ins\CPU_Ins_addf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_addi.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_and.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_call.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_cli.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_decf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_deci.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_divf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_divi.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_eqf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_eqi.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_ftoi.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_gtef.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_gtei.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_gtf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_gti.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_hlt.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_incf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_inci.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_int.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_itof.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_jf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_jint.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_jmp.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_jt.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_ldrf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_ldri.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_ltef.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_ltei.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_ltf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_lti.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_mulf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_muli.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_negf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_negi.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_neqf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_neqi.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_nop.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_not.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_or.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_popf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_popi.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_popreg.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_pushf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_pushi.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_pushreg.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_randf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_randi.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_rdtsc.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_ret.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_sei.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_shl.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_shr.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_strf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_stri.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_subf.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_subi.cpp" />
+    <Content Include="cppimpl\ins\CPU_Ins_xor.cpp" />
+    <Content Include="cppimpl\read_float_reg\CPU_Reg_f0.cpp" />
+    <Content Include="cppimpl\read_float_reg\CPU_Reg_f1.cpp" />
+    <Content Include="cppimpl\read_float_reg\CPU_Reg_f2.cpp" />
+    <Content Include="cppimpl\read_float_reg\CPU_Reg_f3.cpp" />
+    <Content Include="cppimpl\read_float_reg\CPU_Reg_f4.cpp" />
+    <Content Include="cppimpl\read_float_reg\CPU_Reg_f5.cpp" />
+    <Content Include="cppimpl\read_float_reg\CPU_Reg_f6.cpp" />
+    <Content Include="cppimpl\read_float_reg\CPU_Reg_f7.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_ah.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_al.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_ax.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_bfp.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_bh.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_bl.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_bp.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_bx.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_ch.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_cl.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_cx.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_dh.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_dl.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_dx.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_eax.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_ebfp.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_ebp.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_ebx.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_ecx.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_edx.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_eip.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_esfp.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_esp.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_ip.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_r0.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_r1.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_r2.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_r3.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_r4.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_r5.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_r6.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_r7.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_sfp.cpp" />
+    <Content Include="cppimpl\read_int_reg\CPU_Reg_sp.cpp" />
+    <Content Include="cppimpl\write_float_reg\CPU_Reg_f0.cpp" />
+    <Content Include="cppimpl\write_float_reg\CPU_Reg_f1.cpp" />
+    <Content Include="cppimpl\write_float_reg\CPU_Reg_f2.cpp" />
+    <Content Include="cppimpl\write_float_reg\CPU_Reg_f3.cpp" />
+    <Content Include="cppimpl\write_float_reg\CPU_Reg_f4.cpp" />
+    <Content Include="cppimpl\write_float_reg\CPU_Reg_f5.cpp" />
+    <Content Include="cppimpl\write_float_reg\CPU_Reg_f6.cpp" />
+    <Content Include="cppimpl\write_float_reg\CPU_Reg_f7.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_ah.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_al.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_ax.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_bfp.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_bh.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_bl.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_bp.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_bx.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_ch.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_cl.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_cx.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_dh.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_dl.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_dx.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_eax.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_ebfp.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_ebp.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_ebx.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_ecx.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_edx.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_eip.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_esfp.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_esp.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_ip.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_r0.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_r1.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_r2.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_r3.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_r4.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_r5.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_r6.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_r7.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_sfp.cpp" />
+    <Content Include="cppimpl\write_int_reg\CPU_Reg_sp.cpp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

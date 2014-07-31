@@ -1,0 +1,1 @@
+ecx = (ecx&0xFFFFFFFFFFFF0000) | (data&0xFFFF);
